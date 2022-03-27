@@ -1,0 +1,4 @@
+baseURL = 'https://sergekoudoro.com'
+languageCode = 'en-us'
+title = 'Serge Koudoro'
+theme = "serial-programmer"
