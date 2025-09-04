@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+
+{% block title %}
+{% if page.meta.title %}{{ page.meta.title }} - {{ config.name or "Portfolio" }}{% else %}{{ super() }}{% endif %}
+{% endblock %}
+
+{% block content %}
+<article class="page">
+    {% if page.meta.title %}
+    <header class="page-header">
+        <h1 class="page-title">{{ page.meta.title }}</h1>
+        {% if page.meta.subtitle %}
+        <p class="page-subtitle">{{ page.meta.subtitle }}</p>
+        {% endif %}
+        {% if page.meta.date %}
+        <time class="page-date">{{ page.meta.date }}</time>
+        {% endif %}
+    </header>
+    {% endif %}
+
+    <div class="page-content">
+        {{ page.content | safe }}
+    </div>
+</article>
+{% endblock %}

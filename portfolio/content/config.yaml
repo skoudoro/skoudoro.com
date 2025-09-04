@@ -1,0 +1,40 @@
+name: "Serge Koudoro"
+initials: "sk"
+title: "Research Software Engineer"
+tagline: "Building open-source tools for computational neuroimaging and scientific visualization"
+description: "Portfolio of Serge Koudoro - Research Software Engineer specializing in computer vision, neuroimaging, and open-source software development"
+year: "2024"
+
+skills:
+  - "Python"
+  - "Computer Vision"
+  - "Neuroimaging"
+  - "Open Source"
+  - "Scientific Computing"
+  - "Software Architecture"
+  - "Machine Learning"
+
+featured_work:
+  - title: "DIPY"
+    description: "Diffusion Imaging in Python - Leading open-source library for diffusion MRI analysis with 150+ contributors"
+    link: "https://dipy.org"
+
+  - title: "FURY"
+    description: "Free Unified Rendering in Python - Advanced scientific visualization engine for high-dimensional data"
+    link: "https://fury.gl"
+
+  - title: "Neuroimaging Ecosystem"
+    description: "Active contributor to various neuroimaging tools including Nibabel, Nipype, and Brainlife platforms"
+
+personal_work:
+  - title: "Research Collaboration Tool"
+    description: "Platform connecting researchers across institutions to facilitate collaboration and knowledge sharing in neuroimaging"
+    slug: "research-collab-tool"
+
+  - title: "Portfolio Website Generator"
+    description: "Custom static site generator built with Python, Jinja2, and Markdown for creating elegant portfolio websites"
+    slug: "portfolio-generator"
+
+  - title: "Scientific Data Visualizer"
+    description: "Interactive web application for visualizing complex scientific datasets with custom chart types and real-time analysis"
+    slug: "data-visualizer"
