@@ -1,0 +1,68 @@
+{% extends "base.html" %}
+
+{% block content %}
+<section class="hero">
+    <h1 class="hero-name">{{ config.name or "Your Name" }}</h1>
+    <h2 class="hero-title">{{ config.title or "Your Title" }}</h2>
+    <p class="hero-description">{{ config.tagline or "Brief description about yourself" }}</p>
+
+    {% if config.skills %}
+    <div class="hero-skills">
+        {% for skill in config.skills %}
+        <span class="skill-tag">{{ skill }}</span>
+        {% endfor %}
+    </div>
+    {% endif %}
+</section>
+
+{% if page.content %}
+<section class="intro">
+    <div class="intro-content">
+        {{ page.content | safe }}
+    </div>
+</section>
+{% endif %}
+
+{% if config.featured_work %}
+<section class="featured">
+    <h3 class="section-title">🌟 Featured Work</h3>
+    <div class="work-grid">
+        {% for work in config.featured_work %}
+        <div class="work-item">
+            <h4 class="work-title">{{ work.title }}</h4>
+            <p class="work-description">{{ work.description }}</p>
+            {% if work.link %}
+            <a href="{{ work.link }}" class="work-link" target="_blank">View Project →</a>
+            {% endif %}
+        </div>
+        {% endfor %}
+    </div>
+</section>
+{% endif %}
+
+{% if config.personal_work %}
+<section class="personal-work">
+    <h3 class="section-title">🚀 Personal Stuff</h3>
+
+    {% if page.personal_work_intro %}
+    <div class="intro">
+        <div class="intro-content">
+            {{ page.personal_work_intro | safe }}
+        </div>
+    </div>
+    {% endif %}
+
+    <div class="work-grid">
+        {% for work in config.personal_work %}
+        <div class="work-item">
+            <h4 class="work-title">{{ work.title }}</h4>
+            <p class="work-description">{{ work.description }}</p>
+            {% if work.slug %}
+            <a href="/projects/{{ work.slug }}.html" class="work-link">View Project →</a>
+            {% endif %}
+        </div>
+        {% endfor %}
+    </div>
+</section>
+{% endif %}
+{% endblock %}

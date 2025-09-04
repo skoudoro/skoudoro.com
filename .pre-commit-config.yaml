@@ -1,0 +1,42 @@
+repos:
+  # Ruff for Python linting and formatting
+  - repo: https://github.com/astral-sh/ruff-pre-commit
+    rev: v0.6.7
+    hooks:
+      # Run the linter
+      - id: ruff
+        args: [--fix, --exit-non-zero-on-fix]
+        files: ^portfolio/
+      # Run the formatter
+      - id: ruff-format
+        files: ^portfolio/
+
+  # Other useful hooks
+  - repo: https://github.com/pre-commit/pre-commit-hooks
+    rev: v4.6.0
+    hooks:
+      # Basic file checks
+      - id: check-added-large-files
+        args: [--maxkb=1000]
+      - id: check-case-conflict
+      - id: check-merge-conflict
+      - id: check-yaml
+        exclude: ^portfolio/content/config\.yaml$
+      - id: check-toml
+      - id: end-of-file-fixer
+      - id: trailing-whitespace
+        args: [--markdown-linebreak-ext=md]
+
+      # Python-specific
+      - id: check-ast
+        files: ^portfolio/.*\.py$
+      - id: debug-statements
+        files: ^portfolio/.*\.py$
+
+  # Markdown linting
+  - repo: https://github.com/igorshubovych/markdownlint-cli
+    rev: v0.41.0
+    hooks:
+      - id: markdownlint
+        args: [--fix, --disable, MD013]
+        exclude: ^portfolio/dist/
