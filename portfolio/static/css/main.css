@@ -274,6 +274,12 @@ body {
     text-align: center;
 }
 
+.intro-content-left {
+    font-size: var(--text-lg);
+    color: var(--color-text-light);
+    text-align: left;
+}
+
 .featured,
 .personal-work {
     margin-bottom: var(--space-3xl);

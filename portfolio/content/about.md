@@ -45,6 +45,7 @@ My work includes optimizing and integrating algorithms, managing contributions, 
 
 ## 🏆 Key Achievements
 
+- [Grantee](https://chanzuckerberg.com/eoss/proposals/strengthening-computational-neuroanatomy-using-dipy/) of [Essential Open Source Software for Science](https://chanzuckerberg.com/eoss/) program from the [Chan Zuckerberg Initiative](https://chanzuckerberg.com/)
 - **150+ contributors** to DIPY project
 - **21 students** mentored through Google Summer of Code (2018-2024)
 - **Patent holder** in multiphoton imaging technology

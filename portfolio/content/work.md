@@ -13,8 +13,9 @@ DIPY is a free and open-source software project for the analysis of diffusion MR
 
 **Key Contributions:**
 
+- Lead Maintainer, Release Manager, one of the top 3 contributors
 - Implemented advanced tractography algorithms
-- Optimized performance for large-scale data processing  
+- Optimized performance for large-scale data processing
 - Managed software releases and community contributions
 - Developed comprehensive documentation and tutorials
 
@@ -33,6 +34,13 @@ FURY is an advanced scientific visualization engine designed for high-dimensiona
 
 ## 🔬 Research Contributions
 
+### CZI Grantee
+
+Received a 2 years grant named [Essential Open Source Software for Science](https://chanzuckerberg.com/eoss/) from the [Chan Zuckerberg Initiative](https://chanzuckerberg.com/) to advance scientific research while providing reproducibility and transparency via Open source software
+
+- **Title**: Strengthening Computational Neuroanatomy using DIPY
+- **Link**: https://chanzuckerberg.com/eoss/proposals/strengthening-computational-neuroanatomy-using-dipy/
+
 ### 🔬 Multiphoton Imaging Technology
 
 *Patent Holder*
@@ -44,12 +52,6 @@ Developed innovative methods for non-invasive 3D detection and quantification of
 - French patent FR2982369
 - International publication WO2013068943
 - Applications in dermatological research and cosmetic industries
-
-### 📊 Bundle Analytics Framework
-
-*Co-Developer*
-
-Created a computational framework for investigating brain pathway shapes and profiles across populations, enabling large-scale comparative studies of white matter structures.
 
 ## 👨‍🏫 Mentorship & Community
 
@@ -66,10 +68,12 @@ Successfully mentored 21 students in open-source software development, focusing 
 
 ### 🎤 Conference Speaking
 
+- **PyCon Togo 2025**: "Medical Imaging in Python"
+- **NeuroHackademy 2025**: "Instructor for summer school in neuroimaging and data science
+- **DIPY Workshop 2019-present**: Co-organizer and speaker
 - **ISMRM 2019**: "How to document your research code"
 - **OHBM Rome 2019**: DIPY exhibition and workshops
 - **École des Mines ParisTech 2016**: Summer school speaker
-- **DIPY Workshop 2019**: Co-organizer and speaker
 
 ### 🌍 Community Leadership
 
