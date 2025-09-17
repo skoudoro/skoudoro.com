@@ -43,6 +43,7 @@ body {
     color: var(--color-text);
     background-color: var(--color-background);
     font-size: var(--text-base);
+    font-display: swap;
 }
 
 /* Layout */
