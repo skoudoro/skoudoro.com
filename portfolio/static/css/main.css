@@ -280,6 +280,28 @@ body {
     text-align: left;
 }
 
+/* Personal intro section - targets the generated HTML from [personal_work_intro] */
+.personal-work strong {
+    display: block;
+    text-align: center;
+    font-size: var(--text-lg);
+    color: var(--color-text);
+    font-weight: 500;
+    margin: var(--space-xl) 0;
+}
+
+.personal-work ul {
+    font-size: var(--text-base);
+    color: var(--color-text-light);
+    line-height: 1.7;
+    margin: var(--space-xl) 0;
+    padding-left: var(--space-xl);
+}
+
+.personal-work li {
+    margin-bottom: var(--space-md);
+}
+
 .featured,
 .personal-work {
     margin-bottom: var(--space-3xl);
@@ -409,6 +431,24 @@ body {
     .hero-skills {
         justify-content: center;
     }
+
+    /* Personal intro mobile styles */
+    .personal-work strong {
+        font-size: var(--text-base);
+        margin: var(--space-lg) 0;
+        padding: 0 var(--space-sm);
+    }
+
+    .personal-work ul {
+        font-size: var(--text-sm);
+        margin: var(--space-lg) 0;
+        padding-left: var(--space-lg);
+    }
+
+    .personal-work li {
+        margin-bottom: var(--space-sm);
+        line-height: 1.6;
+    }
 }
 
 @media (max-width: 480px) {
@@ -422,5 +462,23 @@ body {
 
     .page-title {
         font-size: var(--text-2xl);
+    }
+
+    /* Personal intro extra small screen styles */
+    .personal-work strong {
+        font-size: var(--text-sm);
+        margin: var(--space-md) 0;
+        padding: 0 var(--space-xs);
+    }
+
+    .personal-work ul {
+        font-size: var(--text-sm);
+        margin: var(--space-md) 0;
+        padding-left: var(--space-md);
+    }
+
+    .personal-work li {
+        margin-bottom: var(--space-xs);
+        line-height: 1.5;
     }
 }
