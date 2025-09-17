@@ -4,6 +4,7 @@ import shutil
 from pathlib import Path
 
 import markdown
+import rcssmin
 import yaml
 from jinja2 import Environment, FileSystemLoader
 
@@ -33,12 +34,49 @@ class PortfolioGenerator:
             shutil.rmtree(self.output_dir)
         self.output_dir.mkdir(exist_ok=True)
 
+    def minify_css_file(self, css_path, output_path):
+        """Minify a single CSS file"""
+        try:
+            with open(css_path, encoding="utf-8") as f:
+                css_content = f.read()
+
+            minified_css = rcssmin.cssmin(css_content)
+
+            # Ensure output directory exists
+            output_path.parent.mkdir(parents=True, exist_ok=True)
+
+            with open(output_path, "w", encoding="utf-8") as f:
+                f.write(minified_css)
+
+            print(f"🎯 Minified CSS: {css_path} -> {output_path}")
+            return True
+        except Exception as e:
+            print(f"⚠️  CSS minification failed for {css_path}: {e}")
+            # Fallback to copying the original file
+            shutil.copy2(css_path, output_path)
+            return False
+
     def copy_static_files(self):
-        """Copy static files to output directory"""
-        if self.static_dir.exists():
-            shutil.copytree(
-                self.static_dir, self.output_dir / "static", dirs_exist_ok=True
-            )
+        """Copy static files to output directory, minifying CSS files"""
+        if not self.static_dir.exists():
+            return
+
+        # Copy all files, but handle CSS specially
+        for item in self.static_dir.rglob("*"):
+            if item.is_file():
+                # Calculate relative path and output path
+                rel_path = item.relative_to(self.static_dir)
+                output_path = self.output_dir / "static" / rel_path
+
+                # Ensure output directory exists
+                output_path.parent.mkdir(parents=True, exist_ok=True)
+
+                if item.suffix.lower() == ".css":
+                    # Minify CSS files
+                    self.minify_css_file(item, output_path)
+                else:
+                    # Copy other files as-is
+                    shutil.copy2(item, output_path)
 
     def load_config(self):
         """Load site configuration"""

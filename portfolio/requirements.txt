@@ -3,6 +3,7 @@ markdown==3.5.1
 pyyaml==6.0.1
 click==8.1.7
 watchdog==3.0.0
+rcssmin==1.1.2
 
 # Development dependencies
 ruff==0.6.7
