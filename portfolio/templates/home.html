@@ -59,6 +59,8 @@
             <p class="work-description">{{ work.description }}</p>
             {% if work.slug %}
             <a href="/projects/{{ work.slug }}.html" class="work-link">View Project →</a>
+            {% elif work.link %}
+                <a href="{{ work.link }}" class="work-link" target="_blank">View Project →</a>
             {% endif %}
         </div>
         {% endfor %}

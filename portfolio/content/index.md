@@ -17,6 +17,6 @@ order: 0
 - I love travelling, and I love even more the expat feeling.
 - I have Sickle Cell Disease and I manage it pretty well! Strange that it is so unknown when it is the most common form of an inherited blood disorder worldwide.
 
-**OK, well that's all for now…**
+**OK, well that's all for now… Below some personal activities**
 
 [/personal_work_intro]

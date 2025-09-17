@@ -116,6 +116,10 @@ skoudoro.com/
 └── README.md                   # This file
 ```
 
+## Analytics:
+
+To see analytics, go to https://skoudoro.goatcounter.com/
+
 ## 🤝 Contributing
 
 This is a personal website, but suggestions and improvements are welcome through issues.
