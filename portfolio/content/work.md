@@ -70,6 +70,7 @@ Successfully mentored 21 students in open-source software development, focusing 
 
 - **PyCon Togo 2025**: "Medical Imaging in Python"
 - **NeuroHackademy 2025**: "Instructor for summer school in neuroimaging and data science
+- **Boys Town Institute for Human Neuroscience 2024**: Coaching for dMRI Algorithm and pipelines
 - **DIPY Workshop 2019-present**: Co-organizer and speaker
 - **ISMRM 2019**: "How to document your research code"
 - **OHBM Rome 2019**: DIPY exhibition and workshops
