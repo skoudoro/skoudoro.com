@@ -27,6 +27,10 @@ featured_work:
     description: "Active contributor to various neuroimaging tools including Nibabel, Nipype, and Brainlife platforms"
 
 personal_work:
+  - title: "Shooter Diary"
+    description: "Logging my new adventure in 10m air pistol"
+    link: "https://shooterdiary.sergekoudoro.com"
+
   - title: "Research Collaboration Tool"
     description: "Platform connecting researchers across institutions to facilitate collaboration and knowledge sharing in neuroimaging"
     slug: "research-collab-tool"
