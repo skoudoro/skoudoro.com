@@ -5,7 +5,7 @@ order: 3
 
 ## 🤝 Let's Connect
 
-I'm always interested in discussing open-source software development, neuroimaging research, and collaborative opportunities. [Want to chat? Schedule a meeting with me here.]()
+I'm always interested in discussing open-source software development, neuroimaging research, and collaborative opportunities. [Want to chat? Schedule a meeting with me here.](https://zcal.co/skoudoro)
 
 ### 🔗 Professional Profiles
 
