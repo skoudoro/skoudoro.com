@@ -57,9 +57,9 @@ Developed innovative methods for non-invasive 3D detection and quantification of
 
 ### 🌟 Google Summer of Code
 
-*Mentor (2018 - 2024)*
+*Mentor (2018 - 2026)*
 
-Successfully mentored 21 students in open-source software development, focusing on:
+Successfully mentored 25 students in open-source software development, focusing on:
 
 - Scientific computing algorithms
 - Software engineering best practices
@@ -68,6 +68,7 @@ Successfully mentored 21 students in open-source software development, focusing 
 
 ### 🎤 Conference Speaking
 
+- **Python Benin**: "Introduction to OpenSource with GSoC"
 - **PyCon Togo 2025**: "Medical Imaging in Python"
 - **NeuroHackademy 2025**: "Instructor for summer school in neuroimaging and data science
 - **Boys Town Institute for Human Neuroscience 2024**: Coaching for dMRI Algorithm and pipelines

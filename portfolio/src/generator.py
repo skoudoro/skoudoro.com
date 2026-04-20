@@ -226,6 +226,49 @@ class PortfolioGenerator:
 
         return generated_files
 
+    def generate_side_project_pages(self, config):
+        """Generate side project listing and detail pages from content/side-projects/"""
+        side_projects_dir = self.content_dir / "side-projects"
+        if not side_projects_dir.exists():
+            return []
+
+        generated_files = []
+        projects = []
+
+        for md_file in side_projects_dir.glob("*.md"):
+            project_data = self.process_markdown_file(md_file)
+            project_data["slug"] = md_file.stem
+            projects.append(project_data)
+
+        projects.sort(
+            key=lambda x: (
+                -(int(x["meta"].get("year", 0) or 0)),
+                x["meta"].get("title", ""),
+            )
+        )
+
+        output_dir = self.output_dir / "side-projects"
+        output_dir.mkdir(exist_ok=True)
+
+        listing_template = self.env.get_template("side-projects.html")
+        listing_html = listing_template.render(projects=projects, config=config)
+        listing_file = self.output_dir / "side-projects.html"
+        with open(listing_file, "w", encoding="utf-8") as f:
+            f.write(listing_html)
+        generated_files.append(listing_file)
+        print(f"✅ Generated {listing_file}")
+
+        detail_template = self.env.get_template("side-project.html")
+        for project in projects:
+            detail_html = detail_template.render(project=project, config=config)
+            detail_file = output_dir / f"{project['slug']}.html"
+            with open(detail_file, "w", encoding="utf-8") as f:
+                f.write(detail_html)
+            generated_files.append(detail_file)
+            print(f"✅ Generated {detail_file}")
+
+        return generated_files
+
     def generate(self):
         """Generate the complete site"""
         print("🚀 Generating portfolio...")
@@ -254,6 +297,10 @@ class PortfolioGenerator:
         # Generate project pages from config
         project_files = self.generate_project_pages(config)
         generated_files.extend(project_files)
+
+        # Generate side project pages
+        side_project_files = self.generate_side_project_pages(config)
+        generated_files.extend(side_project_files)
 
         print(
             f"🎉 Portfolio generated successfully! {len(generated_files)} pages created in {self.output_dir}"

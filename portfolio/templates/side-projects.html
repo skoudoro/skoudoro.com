@@ -1,0 +1,39 @@
+{% extends "base.html" %}
+
+{% block title %}Side Projects — {{ config.name or "Portfolio" }}{% endblock %}
+
+{% block content %}
+<div class="page">
+    <header class="page-header">
+        <h1 class="page-title">Side Projects</h1>
+        <p class="page-subtitle">Things I've built on the side.</p>
+    </header>
+
+    <div class="sp-table">
+        <div class="sp-table-header">
+            <span class="sp-col-name">Project</span>
+            <span class="sp-col-status">What happened</span>
+            <span class="sp-col-year">Started</span>
+        </div>
+        {% for project in projects %}
+        <a href="/side-projects/{{ project.slug }}.html" class="sp-row">
+            <span class="sp-col-name">
+                <span class="sp-project-name">{{ project.meta.title }}</span>
+                {% if project.meta.description %}
+                <span class="sp-project-desc">{{ project.meta.description }}</span>
+                {% endif %}
+            </span>
+            <span class="sp-col-status">
+                {% set s = project.meta.status %}
+                {% if s == "active" %}Still going
+                {% elif s == "defunct" %}Shut it down
+                {% elif s == "wip" %}In progress
+                {% elif s == "acquired" %}Acquired
+                {% else %}{{ s }}{% endif %}
+            </span>
+            <span class="sp-col-year">{{ project.meta.year or "—" }}</span>
+        </a>
+        {% endfor %}
+    </div>
+</div>
+{% endblock %}

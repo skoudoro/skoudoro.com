@@ -1,0 +1,54 @@
+{% extends "base.html" %}
+
+{% block title %}{{ project.meta.title }} — {{ config.name or "Portfolio" }}{% endblock %}
+
+{% block content %}
+<article class="side-project-detail">
+    <a href="/side-projects.html" class="back-link">← Projects</a>
+
+    <header class="side-project-header">
+        <div class="sp-title-row">
+            <h1 class="side-project-title">{{ project.meta.title }}</h1>
+            {% if project.meta.year %}<span class="sp-year">{{ project.meta.year }}</span>{% endif %}
+        </div>
+        {% if project.meta.description %}
+        <p class="sp-description">{{ project.meta.description }}</p>
+        {% endif %}
+    </header>
+
+    {% if project.content %}
+    <section class="sp-section">
+        <h2 class="sp-section-title">A bit more background</h2>
+        <div class="page-content">{{ project.content | safe }}</div>
+    </section>
+    {% endif %}
+
+    {% if project.meta.status %}
+    <section class="sp-section">
+        <h2 class="sp-section-title">What happened?</h2>
+        <p class="sp-status-text">
+            {% set s = project.meta.status %}
+            {% if s == "active" %}Still going 🟢
+            {% elif s == "defunct" %}Shut it down 🔴
+            {% elif s == "wip" %}Work in progress 🟡
+            {% elif s == "acquired" %}Acquired 🔵
+            {% else %}{{ s }}{% endif %}
+        </p>
+    </section>
+    {% endif %}
+
+    {% if project.meta.website or project.meta.github or project.meta.app_store %}
+    <section class="sp-links">
+        {% if project.meta.website %}
+        <a href="{{ project.meta.website }}" class="sp-cta" target="_blank" rel="noopener">Check it out →</a>
+        {% endif %}
+        {% if project.meta.github %}
+        <a href="{{ project.meta.github }}" class="sp-cta sp-cta-secondary" target="_blank" rel="noopener">GitHub →</a>
+        {% endif %}
+        {% if project.meta.app_store %}
+        <a href="{{ project.meta.app_store }}" class="sp-cta sp-cta-secondary" target="_blank" rel="noopener">App Store →</a>
+        {% endif %}
+    </section>
+    {% endif %}
+</article>
+{% endblock %}
