@@ -165,67 +165,6 @@ class PortfolioGenerator:
 
         return output_file
 
-    def generate_project_pages(self, config):
-        """Generate project detail pages from personal_work in config"""
-        generated_files = []
-
-        if not config.get("personal_work"):
-            return generated_files
-
-        # Create projects directory
-        projects_dir = self.output_dir / "projects"
-        projects_dir.mkdir(exist_ok=True)
-
-        # Check if project template exists, fallback to page template
-        try:
-            template = self.env.get_template("project.html")
-        except Exception:
-            template = self.env.get_template("page.html")
-
-        for project in config["personal_work"]:
-            if not project.get("slug"):
-                continue
-
-            # Create project content directory if it doesn't exist
-            project_content_dir = self.content_dir / "projects"
-            project_content_dir.mkdir(exist_ok=True)
-
-            # Look for existing project markdown file
-            project_md_file = project_content_dir / f"{project['slug']}.md"
-
-            if project_md_file.exists():
-                # Use existing markdown content
-                project_data = self.process_markdown_file(project_md_file)
-                project_content = project_data["content"]
-                project_title = project_data["meta"].get("title", project["title"])
-            else:
-                # Generate basic content from config
-                project_content = f"""
-                <h1>{project["title"]}</h1>
-                <p class="project-description">{project["description"]}</p>
-                <div class="project-placeholder">
-                    <p><em>This project page is automatically generated. To customize it, create a file at <code>content/projects/{project["slug"]}.md</code> with your project details.</em></p>
-                </div>
-                """
-                project_title = project["title"]
-
-            # Render project page
-            html = template.render(
-                page={"content": project_content, "meta": {"title": project_title}},
-                config=config,
-                project=project,
-            )
-
-            # Write project file
-            project_file = projects_dir / f"{project['slug']}.html"
-            with open(project_file, "w", encoding="utf-8") as f:
-                f.write(html)
-
-            generated_files.append(project_file)
-            print(f"🚀 Generated project page: {project_file}")
-
-        return generated_files
-
     def generate_side_project_pages(self, config):
         """Generate side project listing and detail pages from content/side-projects/"""
         side_projects_dir = self.content_dir / "side-projects"
@@ -293,10 +232,6 @@ class PortfolioGenerator:
             output_file = self.generate_page(page, config, pages)
             generated_files.append(output_file)
             print(f"✅ Generated {output_file}")
-
-        # Generate project pages from config
-        project_files = self.generate_project_pages(config)
-        generated_files.extend(project_files)
 
         # Generate side project pages
         side_project_files = self.generate_side_project_pages(config)
