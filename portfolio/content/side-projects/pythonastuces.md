@@ -1,6 +1,6 @@
 ---
 title: Python Astuces
-status: active
+status: paused
 year: 2020
 description: French-language weekly newsletter with Python tips and best practices
 website: https://pythonastuces.com

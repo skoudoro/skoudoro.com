@@ -28,10 +28,9 @@
         <h2 class="sp-section-title">What happened?</h2>
         <p class="sp-status-text">
             {% set s = project.meta.status %}
-            {% if s == "active" %}Still going 🟢
-            {% elif s == "defunct" %}Shut it down 🔴
-            {% elif s == "wip" %}Work in progress 🟡
-            {% elif s == "acquired" %}Acquired 🔵
+            {% set status_cfg = config.project_statuses.get(s) %}
+            {% if status_cfg %}
+            <span style="color: {{ status_cfg.color }}">{{ status_cfg.label_long }}</span>
             {% else %}{{ s }}{% endif %}
         </p>
     </section>

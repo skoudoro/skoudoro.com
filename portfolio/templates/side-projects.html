@@ -25,10 +25,9 @@
             </span>
             <span class="sp-col-status">
                 {% set s = project.meta.status %}
-                {% if s == "active" %}Still going
-                {% elif s == "defunct" %}Shut it down
-                {% elif s == "wip" %}In progress
-                {% elif s == "acquired" %}Acquired
+                {% set status_cfg = config.project_statuses.get(s) %}
+                {% if status_cfg %}
+                <span style="color: {{ status_cfg.color }}">{{ status_cfg.label }}</span>
                 {% else %}{{ s }}{% endif %}
             </span>
             <span class="sp-col-year">{{ project.meta.year or "—" }}</span>

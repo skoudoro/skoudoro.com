@@ -14,6 +14,28 @@ skills:
   - "Software Architecture"
   - "Machine Learning"
 
+project_statuses:
+  active:
+    label: "Still going"
+    label_long: "Still going 🟢"
+    color: "#4a9b6f"
+  wip:
+    label: "In progress"
+    label_long: "Work in progress 🟡"
+    color: "#b8860b"
+  paused:
+    label: "In Pause"
+    label_long: "In Pause ⏸️"
+    color: "#a0522d"
+  defunct:
+    label: "Shut it down"
+    label_long: "Shut it down 🔴"
+    color: "#888888"
+  acquired:
+    label: "Acquired"
+    label_long: "Acquired 🔵"
+    color: "#4a6fa5"
+
 featured_work:
   - title: "DIPY"
     description: "Diffusion Imaging in Python - Leading open-source library for diffusion MRI analysis with 150+ contributors"

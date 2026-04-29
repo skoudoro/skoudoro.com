@@ -1,6 +1,6 @@
 ---
 title: NGOmetrics
-status: active
+status: paused
 year: 2021
 description: Analytics and metrics platform for NGOs and non-profit organizations
 website: https://ngometrics.com
