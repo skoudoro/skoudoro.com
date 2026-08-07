@@ -118,7 +118,7 @@ skoudoro.com/
 
 ## Analytics:
 
-To see analytics, go to https://skoudoro.goatcounter.com/
+To see analytics, go to https://umami.futzs.com/
 
 ## 🤝 Contributing
 
