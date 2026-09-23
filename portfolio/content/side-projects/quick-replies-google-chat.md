@@ -1,6 +1,6 @@
 ---
 title: Quick Replies for Google Chat
-status: active
+status: autopilot
 year: 2025
 description: Canned responses and message templates directly inside Google Chat
 website: https://workspace.google.com/marketplace/app/quick_replies_canned_responses_for_googl/505495198829

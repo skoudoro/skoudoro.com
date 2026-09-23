@@ -32,7 +32,20 @@ FURY is an advanced scientific visualization engine designed for high-dimensiona
 - Integration with scientific Python ecosystem
 - Support for large-scale data visualization
 
-## 🔬 Research Contributions
+### 🧊 Polyxios - Mesh I/O for Python
+
+*Creator & Lead Maintainer (2026 - Present)*
+
+[Polyxios](https://polyxios.org) is a unified Python library for reading and writing 3D mesh files. One dependency, 27 formats, no silent data corruption.
+
+**Key Features:**
+
+- Memory-mapped lazy reading for large files
+- Pure Python with optional Cython acceleration
+- CLI tools for format conversion and visualization
+- Plugin system for third-party formats
+
+## 🔬 Research Contributions & Grants
 
 ### CZI Grantee
 
@@ -40,6 +53,13 @@ Received a 2 years grant named [Essential Open Source Software for Science](http
 
 - **Title**: Strengthening Computational Neuroanatomy using DIPY
 - **Link**: https://chanzuckerberg.com/eoss/proposals/strengthening-computational-neuroanatomy-using-dipy/
+
+### GitHub Secure Open Source Fund Grantee
+
+Selected for the [GitHub Secure Open Source Fund](https://github.com/open-source/github-secure-open-source-fund), a security-focused program powered by GitHub Sponsors that provides funding, education, and expert guidance to maintainers of critical open source projects.
+
+- **Project**: DIPY
+- **Link**: https://github.com/open-source/github-secure-open-source-fund
 
 ### 🔬 Multiphoton Imaging Technology
 
@@ -59,7 +79,7 @@ Developed innovative methods for non-invasive 3D detection and quantification of
 
 *Mentor (2018 - 2026)*
 
-Successfully mentored 25 students in open-source software development, focusing on:
+Successfully mentored 27 students in open-source software development, focusing on:
 
 - Scientific computing algorithms
 - Software engineering best practices
@@ -68,9 +88,9 @@ Successfully mentored 25 students in open-source software development, focusing 
 
 ### 🎤 Conference Speaking
 
-- **Python Benin**: "Introduction to OpenSource with GSoC"
+- **Python Benin 2026**: "Introduction to OpenSource with GSoC"
 - **PyCon Togo 2025**: "Medical Imaging in Python"
-- **NeuroHackademy 2025**: "Instructor for summer school in neuroimaging and data science
+- **NeuroHackademy 2025-2026**: Instructor for the summer school in neuroimaging and data science, and discussion panelist (2026)
 - **Boys Town Institute for Human Neuroscience 2024**: Coaching for dMRI Algorithm and pipelines
 - **DIPY Workshop 2019-present**: Co-organizer and speaker
 - **ISMRM 2019**: "How to document your research code"

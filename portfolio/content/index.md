@@ -13,7 +13,7 @@ order: 0
 - I'm married with an amazing wife named Telesilla and proud dad of 2 young kiddos (Helio & Seleny)
 - I played basketball for a long time. I was also basketball coach for many years (10+)
 - In general, I'm big into sports, it is crazy what a human body can do!
-- Living in USA, french, grow up in France, spend a lot of summer in benin, greek by adoption (I need to learn, I do not understand my kids when they talk to my wife 😅)
+- Living in the USA, French, grew up in France, spent many summers in Benin, Greek by adoption (I need to learn, I do not understand my kids when they talk to my wife 😅)
 - I love travelling, and I love even more the expat feeling.
 - I have Sickle Cell Disease and I manage it pretty well! Strange that it is so unknown when it is the most common form of an inherited blood disorder worldwide.
 

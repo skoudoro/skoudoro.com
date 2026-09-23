@@ -27,6 +27,10 @@ project_statuses:
     label: "In Pause"
     label_long: "In Pause ⏸️"
     color: "#a0522d"
+  autopilot:
+    label: "On autopilot"
+    label_long: "On autopilot 🛫 (live, no active dev)"
+    color: "#5b8fa8"
   defunct:
     label: "Shut it down"
     label_long: "Shut it down 🔴"
@@ -44,6 +48,10 @@ featured_work:
   - title: "FURY"
     description: "Free Unified Rendering in Python - Advanced scientific visualization engine for high-dimensional data"
     link: "https://fury.gl"
+
+  - title: "Polyxios"
+    description: "Fast, clean mesh I/O for Python - Read and write 3D mesh files across 27 formats with a single dependency"
+    link: "https://polyxios.org"
 
   - title: "Neuroimaging Ecosystem"
     description: "Active contributor to various neuroimaging tools including Nibabel, Nipype, and Brainlife platforms"
