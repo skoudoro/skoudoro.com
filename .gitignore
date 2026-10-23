@@ -85,3 +85,7 @@ portfolio/.watchdog_*
 
 # Claude
 claude.md
+
+# Local assets not tracked
+portfolio/static/completion_certificate_2022_mentor.pdf
+sk_portfolio_demo.gif

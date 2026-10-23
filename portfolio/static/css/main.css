@@ -596,10 +596,18 @@ body {
     color: var(--color-surface);
 }
 
+.page-content a.btn {
+    border: 1px solid var(--color-accent);
+}
+
 .page-content a.btn-primary,
 .page-content a.btn-primary:hover {
     color: var(--color-surface);
     text-decoration: none;
+}
+
+.page-content a.btn-primary:hover {
+    border-color: #2b6cb0;
 }
 
 .page-content a.btn-secondary {

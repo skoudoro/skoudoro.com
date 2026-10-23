@@ -90,6 +90,6 @@ Invoices and contracts are available for US and EU clients.
 <p><strong>Have a project in mind?</strong> Tell me briefly about your data, your bottleneck and your timeline.</p>
 <div class="hero-actions">
 <a href="https://zcal.co/skoudoro" class="btn btn-primary" target="_blank" rel="noopener">Book a 30-min intro call</a>
-<a href="mailto:CONTACT_EMAIL" class="btn btn-secondary">Email me</a>
+<a href="mailto:skoudoro@futzs.com" class="btn btn-secondary">Email me</a>
 </div>
 </div>
