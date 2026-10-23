@@ -5,11 +5,55 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="theme-color" content="#fafafa">
     <title>{% block title %}{{ config.name or "Portfolio" }}{% endblock %}</title>
-    <meta name="description" content="{{ config.description or "Portfolio website" }}">
+    {% set meta_description = (page.meta.description if page is defined and page.meta.description else config.description) or "Portfolio website" %}
+    {% set page_path = ("/" if page is defined and page.slug == "index" else ("/" ~ page.slug ~ ".html" if page is defined else "/")) %}
+    <meta name="description" content="{{ meta_description }}">
+    <link rel="canonical" href="{{ config.site_url }}{{ page_path }}">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="{{ config.name }}">
+    <meta property="og:title" content="{% if page is defined and page.meta.title and page.slug != 'index' %}{{ page.meta.title }} - {% endif %}{{ config.name }}">
+    <meta property="og:description" content="{{ meta_description }}">
+    <meta property="og:url" content="{{ config.site_url }}{{ page_path }}">
+    {# TODO: add a 1200x630 image at portfolio/static/og.png #}
+    <meta property="og:image" content="{{ config.site_url }}/static/og.png">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:site" content="@skoudoro">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="stylesheet" href="/static/css/main.css">
     <script defer src="https://umami.futzs.com/script.js" data-website-id="8e7e9a2b-d83a-4e36-aef5-c5643ea6b1f5" data-domains="sergekoudoro.com"></script>
+    {% if page is defined and page.slug in ["index", "services"] %}
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "Person",
+          "@id": "{{ config.site_url }}/#person",
+          "name": "{{ config.name }}",
+          "jobTitle": "{{ config.title }}",
+          "url": "{{ config.site_url }}",
+          "affiliation": {"@type": "CollegeOrUniversity", "name": "Indiana University"},
+          "knowsAbout": ["Diffusion MRI", "Medical imaging", "Scientific visualization", "3D mesh processing", "Performance optimization", "Scientific Python"],
+          "sameAs": [
+            "https://github.com/skoudoro",
+            "https://www.linkedin.com/in/serge-koudoro-b49489ba",
+            "https://x.com/skoudoro",
+            "https://orcid.org/0000-0002-9819-9884"
+          ]
+        },
+        {
+          "@type": "ProfessionalService",
+          "name": "{{ config.name }} — Scientific software consulting",
+          "url": "{{ config.site_url }}/services.html",
+          "provider": {"@id": "{{ config.site_url }}/#person"},
+          "areaServed": ["US", "EU"],
+          "serviceType": [{% for s in config.services %}"{{ s.title }}"{% if not loop.last %}, {% endif %}{% endfor %}]
+        }
+      ]
+    }
+    </script>
+    {% endif %}
     {% block head %}{% endblock %}
 </head>
 <body>
@@ -20,7 +64,7 @@
                 <li><a href="/" class="nav-link">home</a></li>
                 <li><a href="/about.html" class="nav-link">about</a></li>
                 <li><a href="/work.html" class="nav-link">work</a></li>
-                <li><a href="/side-projects.html" class="nav-link">projects</a></li>
+                <li><a href="/services.html" class="nav-link">services</a></li>
                 <li><a href="/contact.html" class="nav-link">contact</a></li>
             </ul>
         </div>
@@ -36,7 +80,10 @@
         <div class="container">
             <div class="footer-content">
                 <p>Built with ❤️ by {{ config.name or "Serge Koudoro" }} &copy; {{ config.year or "2024" }}</p>
-                <a href="https://github.com/skoudoro/skoudoro.com" target="_blank" class="source-link">See the source</a>
+                <div class="footer-links">
+                    <a href="/side-projects.html" class="footer-link">Side projects</a>
+                    <a href="https://github.com/skoudoro/skoudoro.com" target="_blank" class="source-link">See the source</a>
+                </div>
             </div>
         </div>
     </footer>

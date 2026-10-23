@@ -1,18 +1,42 @@
 name: "Serge Koudoro"
 initials: "sk"
 title: "Research Software Engineer"
-tagline: "Building open-source tools for computational neuroimaging and scientific visualization"
-description: "Portfolio of Serge Koudoro - Research Software Engineer specializing in computer vision, neuroimaging, and open-source software development"
+tagline: "Open-source tools for neuroimaging & 3D, and expert help for the teams who depend on them"
+description: "Serge Koudoro — Research Software Engineer and consultant: medical imaging, 3D, performance optimization and open-source scientific Python (DIPY, FURY, polyxios)."
+site_url: "https://sergekoudoro.com"
+booking_url: "https://zcal.co/skoudoro"
+# TODO: replace with your public contact email
+contact_email: "CONTACT_EMAIL"
 year: "2026"
 
 skills:
   - "Python"
-  - "Computer Vision"
-  - "Neuroimaging"
+  - "Medical Imaging"
+  - "Performance Optimization"
+  - "3D & Mesh Processing"
+  - "Scientific Visualization"
+  - "File Formats"
   - "Open Source"
-  - "Scientific Computing"
-  - "Software Architecture"
-  - "Machine Learning"
+
+credentials:
+  - "15+ years of scientific software"
+  - "7 years of industrial R&D"
+  - "Patent holder"
+  - "CZI & GitHub SOSF grantee"
+  - "Google Developer Expert"
+
+services:
+  - title: "Custom imaging & data pipelines"
+    description: "Diffusion MRI, microscopy/FLIM and 3D mesh pipelines, built to be reproducible and maintainable."
+  - title: "Performance optimization"
+    description: "Profiling and speeding up slow scientific code with Cython, SIMD and GPU, with benchmarks before and after."
+  - title: "File formats & data conversion"
+    description: "NIfTI, DICOM, mesh and proprietary formats, plus migration from meshio to polyxios."
+  - title: "Maintenance & support contracts"
+    description: "Priority fixes, code review and long-term support for the internal tools your team relies on."
+
+# Statuses grouped under "Archive" on the side-projects page
+archive_statuses: ["paused", "defunct"]
 
 project_statuses:
   active:
@@ -24,16 +48,16 @@ project_statuses:
     label_long: "Work in progress 🟡"
     color: "#b8860b"
   paused:
-    label: "In Pause"
-    label_long: "In Pause ⏸️"
+    label: "Paused"
+    label_long: "Paused ⏸️"
     color: "#a0522d"
   autopilot:
-    label: "On autopilot"
-    label_long: "On autopilot 🛫 (live, no active dev)"
+    label: "Maintained"
+    label_long: "Maintained (live, no active development)"
     color: "#5b8fa8"
   defunct:
-    label: "Shut it down"
-    label_long: "Shut it down 🔴"
+    label: "Archived"
+    label_long: "Archived"
     color: "#888888"
   acquired:
     label: "Acquired"
@@ -50,8 +74,9 @@ featured_work:
     link: "https://fury.gl"
 
   - title: "Polyxios"
-    description: "Fast, clean mesh I/O for Python - Read and write 3D mesh files across 27 formats with a single dependency"
+    description: "Fast, clean mesh I/O for Python and the maintained successor to meshio - Read and write 3D mesh files across 27 formats with a single dependency"
     link: "https://polyxios.org"
 
   - title: "Neuroimaging Ecosystem"
     description: "Active contributor to various neuroimaging tools including Nibabel, Nipype, and Brainlife platforms"
+    link: "https://github.com/skoudoro"

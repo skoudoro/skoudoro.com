@@ -6,6 +6,21 @@
     <h2 class="hero-title">{{ config.title or "Your Title" }}</h2>
     <p class="hero-description">{{ config.tagline or "Brief description about yourself" }}</p>
 
+    <div class="hero-actions">
+        <a href="/services.html" class="btn btn-primary">Work with me</a>
+        {% if config.booking_url %}
+        <a href="{{ config.booking_url }}" class="btn btn-secondary" target="_blank" rel="noopener">Book a call</a>
+        {% endif %}
+    </div>
+
+    {% if config.credentials %}
+    <ul class="credentials">
+        {% for item in config.credentials %}
+        <li>{{ item }}</li>
+        {% endfor %}
+    </ul>
+    {% endif %}
+
     {% if config.skills %}
     <div class="hero-skills">
         {% for skill in config.skills %}
@@ -23,9 +38,24 @@
 </section>
 {% endif %}
 
+{% if config.services %}
+<section class="featured">
+    <h3 class="section-title">How I can help</h3>
+    <div class="work-grid service-grid">
+        {% for service in config.services %}
+        <div class="work-item">
+            <h4 class="work-title">{{ service.title }}</h4>
+            <p class="work-description">{{ service.description }}</p>
+        </div>
+        {% endfor %}
+    </div>
+    <p class="section-cta"><a href="/services.html" class="work-link">See services and how we can work together →</a></p>
+</section>
+{% endif %}
+
 {% if config.featured_work %}
 <section class="featured">
-    <h3 class="section-title">🌟 Featured Work</h3>
+    <h3 class="section-title">Featured Work</h3>
     <div class="work-grid">
         {% for work in config.featured_work %}
         <div class="work-item">
@@ -39,24 +69,4 @@
     </div>
 </section>
 {% endif %}
-
-<section class="personal-work">
-    <h3 class="section-title">🚀 Personal Stuff</h3>
-
-    {% if page.personal_work_intro %}
-    <div class="intro">
-        <div class="intro-content-left">
-            {{ page.personal_work_intro | safe }}
-        </div>
-    </div>
-    {% endif %}
-
-    <div class="work-grid">
-        <div class="work-item">
-            <h4 class="work-title">Side Projects</h4>
-            <p class="work-description">A collection of things I've built on the side — experiments, tools, and personal projects.</p>
-            <a href="/side-projects.html" class="work-link">View All Projects →</a>
-        </div>
-    </div>
-</section>
 {% endblock %}

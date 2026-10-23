@@ -2,20 +2,14 @@
 
 {% block title %}Side Projects — {{ config.name or "Portfolio" }}{% endblock %}
 
-{% block content %}
-<div class="page">
-    <header class="page-header">
-        <h1 class="page-title">Side Projects</h1>
-        <p class="page-subtitle">Things I've built on the side.</p>
-    </header>
-
+{% macro project_table(items, status_header) %}
     <div class="sp-table">
         <div class="sp-table-header">
             <span class="sp-col-name">Project</span>
-            <span class="sp-col-status">What happened</span>
+            <span class="sp-col-status">{{ status_header }}</span>
             <span class="sp-col-year">Started</span>
         </div>
-        {% for project in projects %}
+        {% for project in items %}
         <a href="/side-projects/{{ project.slug }}.html" class="sp-row">
             <span class="sp-col-name">
                 <span class="sp-project-name">{{ project.meta.title }}</span>
@@ -34,5 +28,20 @@
         </a>
         {% endfor %}
     </div>
+{% endmacro %}
+
+{% block content %}
+<div class="page">
+    <header class="page-header">
+        <h1 class="page-title">Side Projects</h1>
+        <p class="page-subtitle">Experiments, tools and products I've built outside my main work.</p>
+    </header>
+
+    {{ project_table(current_projects, "Status") }}
+
+    {% if archived_projects %}
+    <h2 class="sp-archive-title">Archive</h2>
+    {{ project_table(archived_projects, "Status") }}
+    {% endif %}
 </div>
 {% endblock %}

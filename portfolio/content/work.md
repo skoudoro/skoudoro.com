@@ -1,6 +1,7 @@
 ---
 title: Work
 order: 2
+description: "Open-source projects, industry experience, grants, patents and talks of Serge Koudoro."
 ---
 
 ## 🚀 Open Source Projects
@@ -44,6 +45,13 @@ FURY is an advanced scientific visualization engine designed for high-dimensiona
 - Pure Python with optional Cython acceleration
 - CLI tools for format conversion and visualization
 - Plugin system for third-party formats
+
+## 🏭 Industry Experience
+
+Before Indiana University, I spent 10 years building scientific software for industry and applied research:
+
+- **Transvalor SA, France (2010–2017)**: Research Software Engineer building software for industrial applications and applying computer vision to real-world problems.
+- **Centre for Mathematical Morphology, École des Mines ParisTech (2007–2010)**: research in mathematical morphology and multiphoton imaging, leading to a patent on non-invasive 3D detection of melanin (FR2982369 / WO2013068943).
 
 ## 🔬 Research Contributions & Grants
 
@@ -102,3 +110,7 @@ Successfully mentored 27 students in open-source software development, focusing 
 - **Brainhack Co-Organizer** (2018-2021): Bloomington, Indiana
 - **Google Season of Docs Admin** (2020): DIPY documentation improvement
 - **Technical Writing Advocate**: Promoting documentation best practices
+
+---
+
+**Need this kind of expertise on your project?** I help companies and labs with imaging pipelines, performance optimization, file formats and long-term maintenance. [See services →](/services.html)

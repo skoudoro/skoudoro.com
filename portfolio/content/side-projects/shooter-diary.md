@@ -1,6 +1,7 @@
 ---
 title: Shooter Diary
 status: active
+hidden: true
 year: 2024
 description: Logging my new adventure in 10m air pistol shooting
 website: https://shooterdiary.sergekoudoro.com

@@ -177,6 +177,13 @@ class PortfolioGenerator:
         for md_file in side_projects_dir.glob("*.md"):
             project_data = self.process_markdown_file(md_file)
             project_data["slug"] = md_file.stem
+            # Skip projects flagged with `hidden: true` in their frontmatter
+            if str(project_data["meta"].get("hidden", "")).strip().lower() in (
+                "true",
+                "yes",
+                "1",
+            ):
+                continue
             projects.append(project_data)
 
         projects.sort(
@@ -190,7 +197,19 @@ class PortfolioGenerator:
         output_dir.mkdir(exist_ok=True)
 
         listing_template = self.env.get_template("side-projects.html")
-        listing_html = listing_template.render(projects=projects, config=config)
+        archive_statuses = set(config.get("archive_statuses", ["paused", "defunct"]))
+        current_projects = [
+            p for p in projects if p["meta"].get("status") not in archive_statuses
+        ]
+        archived_projects = [
+            p for p in projects if p["meta"].get("status") in archive_statuses
+        ]
+        listing_html = listing_template.render(
+            projects=projects,
+            current_projects=current_projects,
+            archived_projects=archived_projects,
+            config=config,
+        )
         listing_file = self.output_dir / "side-projects.html"
         with open(listing_file, "w", encoding="utf-8") as f:
             f.write(listing_html)
