@@ -78,13 +78,39 @@
 
     <footer class="footer">
         <div class="container">
-            <div class="footer-content">
-                <p>Built with ❤️ by {{ config.name or "Serge Koudoro" }} &copy; {{ config.year or "2024" }}</p>
-                <div class="footer-links">
-                    {% if config.sponsor_url %}<a href="{{ config.sponsor_url }}" class="footer-link" target="_blank" rel="noopener">Sponsor</a>{% endif %}
-                    <a href="/side-projects.html" class="footer-link">Side projects</a>
-                    <a href="https://github.com/skoudoro/skoudoro.com" target="_blank" class="source-link">See the source</a>
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <a href="/" class="footer-name">{{ config.name or "Serge Koudoro" }}</a>
+                    <p class="footer-pitch">{{ config.footer_pitch or config.title }}</p>
+                    <p class="footer-status"><span class="footer-dot" aria-hidden="true"></span>Available for consulting</p>
+                    <div class="footer-cta">
+                        {% if config.booking_url %}<a href="{{ config.booking_url }}" class="footer-link" target="_blank" rel="noopener">Book a call →</a>{% endif %}
+                        {% if config.contact_email %}<a href="mailto:{{ config.contact_email }}" class="footer-link">{{ config.contact_email }}</a>{% endif %}
+                    </div>
                 </div>
+                <nav class="footer-col" aria-label="Footer">
+                    <h2 class="footer-heading">Site</h2>
+                    <ul>
+                        <li><a href="/services.html" class="footer-link">Services</a></li>
+                        <li><a href="/work.html" class="footer-link">Work</a></li>
+                        <li><a href="/side-projects.html" class="footer-link">Side projects</a></li>
+                        <li><a href="/about.html" class="footer-link">About</a></li>
+                        <li><a href="/contact.html" class="footer-link">Contact</a></li>
+                    </ul>
+                </nav>
+                <div class="footer-col">
+                    <h2 class="footer-heading">Elsewhere</h2>
+                    <ul>
+                        {% for link in config.social or [] %}
+                        <li><a href="{{ link.url }}" class="footer-link" target="_blank" rel="noopener me">{{ link.label }}</a></li>
+                        {% endfor %}
+                        {% if config.sponsor_url %}<li><a href="{{ config.sponsor_url }}" class="footer-link footer-sponsor" target="_blank" rel="noopener">♥ Sponsor</a></li>{% endif %}
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; {{ config.year or "2024" }} {{ config.name or "Serge Koudoro" }}</p>
+                <p>Built with Python &amp; Jinja2 · <a href="https://github.com/skoudoro/skoudoro.com" class="footer-link" target="_blank" rel="noopener">source</a></p>
             </div>
         </div>
     </footer>

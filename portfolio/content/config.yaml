@@ -6,9 +6,21 @@ description: "Serge Koudoro — Research Software Engineer and consultant: medic
 site_url: "https://sergekoudoro.com"
 booking_url: "https://zcal.co/skoudoro"
 sponsor_url: "https://github.com/sponsors/skoudoro"
-# TODO: replace with your public contact email
 contact_email: "skoudoro@futzs.com"
 year: "2026"
+footer_pitch: "Scientific software, medical imaging & 3D. Open source by default."
+
+social:
+  - label: "GitHub"
+    url: "https://github.com/skoudoro"
+  - label: "LinkedIn"
+    url: "https://www.linkedin.com/in/serge-koudoro-b49489ba"
+  - label: "X"
+    url: "https://x.com/skoudoro"
+  - label: "ORCID"
+    url: "https://orcid.org/0000-0002-9819-9884"
+  - label: "Google Scholar"
+    url: "https://scholar.google.com/citations?hl=fr&user=4xF4xmUAAAAJ"
 
 skills:
   - "Python"
