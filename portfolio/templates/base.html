@@ -23,6 +23,12 @@
     <meta name="twitter:site" content="@skoudoro">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <script>
+        try {
+            var t = localStorage.getItem("theme");
+            if (t === "light" || t === "dark") document.documentElement.dataset.theme = t;
+        } catch (e) {}
+    </script>
     <link rel="stylesheet" href="/static/css/main.css">
     <script defer src="https://umami.futzs.com/script.js" data-website-id="8e7e9a2b-d83a-4e36-aef5-c5643ea6b1f5" data-domains="sergekoudoro.com"></script>
     {% if page is defined and page.slug in ["index", "services"] %}
@@ -63,13 +69,20 @@
     <nav class="nav">
         <div class="nav-container">
             <a href="/" class="nav-logo">{{ config.initials or "sk" }}</a>
-            <ul class="nav-links">
-                <li><a href="/" class="nav-link">home</a></li>
-                <li><a href="/about.html" class="nav-link">about</a></li>
-                <li><a href="/work.html" class="nav-link">work</a></li>
-                <li><a href="/services.html" class="nav-link">services</a></li>
-                <li><a href="/contact.html" class="nav-link">contact</a></li>
-            </ul>
+            <div class="nav-right">
+                <ul class="nav-links">
+                    <li><a href="/" class="nav-link">home</a></li>
+                    <li><a href="/about.html" class="nav-link">about</a></li>
+                    <li><a href="/work.html" class="nav-link">work</a></li>
+                    <li><a href="/services.html" class="nav-link">services</a></li>
+                    <li><a href="/contact.html" class="nav-link">contact</a></li>
+                </ul>
+                <button type="button" class="theme-toggle" id="theme-toggle" aria-label="Theme: system" title="Theme: system">
+                    <span class="theme-icon icon-system">{{ icon("monitor") }}</span>
+                    <span class="theme-icon icon-light">{{ icon("sun") }}</span>
+                    <span class="theme-icon icon-dark">{{ icon("moon") }}</span>
+                </button>
+            </div>
         </div>
     </nav>
 
@@ -118,6 +131,35 @@
         </div>
     </footer>
 
+    <script>
+        (function () {
+            var root = document.documentElement;
+            var button = document.getElementById("theme-toggle");
+            var metas = document.querySelectorAll('meta[name="theme-color"]');
+            var colors = {light: "#fafafa", dark: "#0f1115"};
+            var next = {system: "light", light: "dark", dark: "system"};
+
+            function apply(theme) {
+                if (theme === "system") delete root.dataset.theme;
+                else root.dataset.theme = theme;
+                metas.forEach(function (m) {
+                    m.content = theme === "system" ? colors[m.media.indexOf("dark") > -1 ? "dark" : "light"] : colors[theme];
+                });
+                button.setAttribute("aria-label", "Theme: " + theme);
+                button.title = "Theme: " + theme;
+            }
+
+            apply(root.dataset.theme || "system");
+            button.addEventListener("click", function () {
+                var theme = next[root.dataset.theme || "system"];
+                apply(theme);
+                try {
+                    if (theme === "system") localStorage.removeItem("theme");
+                    else localStorage.setItem("theme", theme);
+                } catch (e) {}
+            });
+        })();
+    </script>
     {% block scripts %}{% endblock %}
 </body>
 </html>

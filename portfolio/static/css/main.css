@@ -778,6 +778,12 @@ body {
         padding: var(--space-md) var(--space-lg);
     }
 
+    .nav-right {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: var(--space-md);
+    }
+
     .nav-links {
         justify-content: center;
         gap: var(--space-xs) var(--space-md);
@@ -1037,10 +1043,50 @@ body {
 }
 
 /* ------------------------------------------------------------------ */
-/* Dark mode (follows the system setting)                               */
+/* Theme toggle                                                         */
+/* ------------------------------------------------------------------ */
+.nav-right {
+    display: flex;
+    align-items: center;
+    gap: var(--space-lg);
+}
+
+.theme-toggle {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 2rem;
+    height: 2rem;
+    padding: 0;
+    color: var(--color-text-light);
+    background: none;
+    border: 1px solid var(--color-border);
+    border-radius: 4px;
+    cursor: pointer;
+    transition: color 0.2s ease, background-color 0.2s ease;
+}
+
+.theme-toggle:hover {
+    color: var(--color-text);
+    background-color: var(--color-background);
+}
+
+.theme-icon {
+    display: none;
+    line-height: 0;
+}
+
+:root:not([data-theme]) .icon-system,
+:root[data-theme="light"] .icon-light,
+:root[data-theme="dark"] .icon-dark {
+    display: inline-block;
+}
+
+/* ------------------------------------------------------------------ */
+/* Dark mode: system setting unless overridden by the toggle            */
 /* ------------------------------------------------------------------ */
 @media (prefers-color-scheme: dark) {
-    :root {
+    :root:not([data-theme="light"]) {
         --color-text: #e2e8f0;
         --color-text-light: #cbd5e0;
         --color-text-lighter: #a0aec0;
@@ -1052,20 +1098,54 @@ body {
         --color-on-accent: #0f1115;
     }
 
-    .btn-primary:hover,
-    .btn-secondary:hover {
+    :root:not([data-theme="light"]) .btn-primary:hover,
+    :root:not([data-theme="light"]) .btn-secondary:hover {
         background-color: #90bff1;
         border-color: #90bff1;
     }
 
-    .work-item:hover,
-    .hero-portrait {
+    :root:not([data-theme="light"]) .work-item:hover,
+    :root:not([data-theme="light"]) .hero-portrait {
         box-shadow: 0 0 0 1px var(--color-border), 0 8px 24px rgba(0, 0, 0, 0.4);
     }
 
-    .page-content pre,
-    .page-content code {
+    :root:not([data-theme="light"]) .page-content pre,
+    :root:not([data-theme="light"]) .page-content code {
         background-color: var(--color-surface);
         color: var(--color-text);
     }
+}
+
+:root[data-theme="dark"] {
+    color-scheme: dark;
+    --color-text: #e2e8f0;
+    --color-text-light: #cbd5e0;
+    --color-text-lighter: #a0aec0;
+    --color-background: #0f1115;
+    --color-surface: #171a21;
+    --color-border: #2d3340;
+    --color-accent: #63a4ea;
+    --color-accent-soft: rgba(99, 164, 234, 0.15);
+    --color-on-accent: #0f1115;
+}
+
+:root[data-theme="light"] {
+    color-scheme: light;
+}
+
+:root[data-theme="dark"] .btn-primary:hover,
+:root[data-theme="dark"] .btn-secondary:hover {
+    background-color: #90bff1;
+    border-color: #90bff1;
+}
+
+:root[data-theme="dark"] .work-item:hover,
+:root[data-theme="dark"] .hero-portrait {
+    box-shadow: 0 0 0 1px var(--color-border), 0 8px 24px rgba(0, 0, 0, 0.4);
+}
+
+:root[data-theme="dark"] .page-content pre,
+:root[data-theme="dark"] .page-content code {
+    background-color: var(--color-surface);
+    color: var(--color-text);
 }
