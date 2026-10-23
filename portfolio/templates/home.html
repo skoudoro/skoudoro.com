@@ -1,34 +1,45 @@
 {% extends "base.html" %}
 
+{% block container_class %} container-wide{% endblock %}
+
 {% block content %}
-<section class="hero">
-    <h1 class="hero-name">{{ config.name or "Your Name" }}</h1>
-    <h2 class="hero-title">{{ config.title or "Your Title" }}</h2>
-    <p class="hero-description">{{ config.tagline or "Brief description about yourself" }}</p>
-
-    <div class="hero-actions">
-        <a href="/services.html" class="btn btn-primary">Work with me</a>
-        {% if config.booking_url %}
-        <a href="{{ config.booking_url }}" class="btn btn-secondary" target="_blank" rel="noopener">Book a call</a>
-        {% endif %}
-    </div>
-
-    {% if config.credentials %}
-    <ul class="credentials">
-        {% for item in config.credentials %}
-        <li>{{ item }}</li>
-        {% endfor %}
-    </ul>
+<section class="hero hero-split">
+    {% if config.portrait_url %}
+    <img class="hero-portrait" src="{{ config.portrait_url }}" alt="Portrait of {{ config.name }}" width="200" height="200" loading="eager">
     {% endif %}
+    <div class="hero-text">
+        <h1 class="hero-name">{{ config.name or "Your Name" }}</h1>
+        <h2 class="hero-title">{{ config.title or "Your Title" }}</h2>
+        <p class="hero-description">{{ config.tagline or "Brief description about yourself" }}</p>
 
-    {% if config.skills %}
-    <div class="hero-skills">
-        {% for skill in config.skills %}
-        <span class="skill-tag">{{ skill }}</span>
-        {% endfor %}
+        <div class="hero-actions">
+            <a href="/services.html" class="btn btn-primary">Work with me</a>
+            {% if config.booking_url %}
+            <a href="{{ config.booking_url }}" class="btn btn-secondary" target="_blank" rel="noopener">Book a call</a>
+            {% endif %}
+        </div>
     </div>
-    {% endif %}
 </section>
+
+{% if config.stats %}
+<section class="stats" aria-label="Key figures">
+    {% for stat in config.stats %}
+    <div class="stat">
+        <span class="stat-value">{{ stat.value }}</span>
+        <span class="stat-label">{{ stat.label }}</span>
+    </div>
+    {% endfor %}
+</section>
+{% endif %}
+
+{% if config.supported_by %}
+<p class="supported-by">
+    <span class="supported-by-label">Funding &amp; affiliations</span>
+    {% for org in config.supported_by %}
+    <a href="{{ org.url }}" target="_blank" rel="noopener">{{ org.name }}</a>{% if not loop.last %}<span aria-hidden="true">·</span>{% endif %}
+    {% endfor %}
+</p>
+{% endif %}
 
 {% if page.content %}
 <section class="intro">
@@ -53,18 +64,40 @@
 </section>
 {% endif %}
 
+{% if config.testimonials %}
+<section class="featured">
+    <h3 class="section-title">What clients say</h3>
+    <div class="testimonials">
+        {% for t in config.testimonials %}
+        <figure class="testimonial">
+            <blockquote>“{{ t.quote }}”</blockquote>
+            <figcaption>
+                {% if t.logo %}<img src="{{ t.logo }}" alt="" class="testimonial-logo" loading="lazy">{% endif %}
+                <span><strong>{{ t.name }}</strong>{% if t.role %}<br>{{ t.role }}{% endif %}</span>
+            </figcaption>
+        </figure>
+        {% endfor %}
+    </div>
+</section>
+{% endif %}
+
 {% if config.featured_work %}
 <section class="featured">
     <h3 class="section-title">Featured Work</h3>
-    <div class="work-grid">
+    <div class="project-grid">
         {% for work in config.featured_work %}
-        <div class="work-item">
-            <h4 class="work-title">{{ work.title }}</h4>
-            <p class="work-description">{{ work.description }}</p>
-            {% if work.link %}
-            <a href="{{ work.link }}" class="work-link" target="_blank">View Project →</a>
+        <article class="work-item project-card{% if not work.image %} project-card-text{% endif %}">
+            {% if work.image %}
+            <img class="project-image" src="{{ work.image }}" alt="{{ work.image_alt or work.title }}" width="800" height="450" loading="lazy">
             {% endif %}
-        </div>
+            <div class="project-body">
+                <h4 class="work-title">{{ work.title }}</h4>
+                <p class="work-description">{{ work.description }}</p>
+                {% if work.link %}
+                <a href="{{ work.link }}" class="work-link" target="_blank" rel="noopener">View Project →</a>
+                {% endif %}
+            </div>
+        </article>
         {% endfor %}
     </div>
 </section>

@@ -39,11 +39,38 @@ skills:
   - "File Formats"
   - "Open Source"
 
-credentials:
-  - "15+ years of scientific software"
-  - "7 years of industrial R&D"
-  - "Patent holder"
-  - "CZI & GitHub SOSF grantee"
+# Portrait shown in the homepage hero. Uses the GitHub avatar; replace with a
+# local file (e.g. "/static/img/portrait.jpg") for a higher-resolution photo.
+portrait_url: "https://avatars.githubusercontent.com/skoudoro?s=400"
+
+# Impact numbers under the hero (keep them verifiable)
+stats:
+  - value: "15+"
+    label: "years building scientific software"
+  - value: "7"
+    label: "years of industrial R&D"
+  - value: "150+"
+    label: "DIPY contributors"
+  - value: "27"
+    label: "students mentored (GSoC)"
+
+# Shown as text names under the stats
+supported_by:
+  - name: "Chan Zuckerberg Initiative"
+    url: "https://chanzuckerberg.com/eoss/proposals/strengthening-computational-neuroanatomy-using-dipy/"
+  - name: "GitHub Secure Open Source Fund"
+    url: "https://github.com/open-source/github-secure-open-source-fund"
+  - name: "Indiana University"
+    url: "https://luddy.indiana.edu"
+
+# Client quotes. The section stays hidden while this list is empty.
+# Only add a quote (and logo) with written permission. Example:
+# testimonials:
+#   - quote: "..."
+#     name: "First Last"
+#     role: "Title, Company"
+#     logo: "/static/img/clients/company.svg"   # optional
+testimonials: []
 
 services:
   - title: "Custom imaging & data pipelines"
@@ -88,14 +115,20 @@ featured_work:
   - title: "DIPY"
     description: "Diffusion Imaging in Python - Leading open-source library for diffusion MRI analysis with 150+ contributors"
     link: "https://dipy.org"
+    image: "/static/img/dipy.jpg"
+    image_alt: "Whole-brain tractography rendered with DIPY"
 
   - title: "FURY"
     description: "Free Unified Rendering in Python - Advanced scientific visualization engine for high-dimensional data"
     link: "https://fury.gl"
+    image: "/static/img/fury.jpg"
+    image_alt: "FURY scientific visualization engine banner"
 
   - title: "Polyxios"
     description: "Fast, clean mesh I/O for Python and the maintained successor to meshio - Read and write 3D mesh files across 27 formats with a single dependency"
     link: "https://polyxios.org"
+    image: "/static/img/polyxios.jpg"
+    image_alt: "Triangulated 3D mesh"
 
   - title: "Neuroimaging Ecosystem"
     description: "Active contributor to various neuroimaging tools including Nibabel, Nipype, and Brainlife platforms"

@@ -4,7 +4,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="theme-color" content="#fafafa">
+    <meta name="theme-color" content="#fafafa" media="(prefers-color-scheme: light)">
+    <meta name="theme-color" content="#0f1115" media="(prefers-color-scheme: dark)">
+    <meta name="color-scheme" content="light dark">
     <title>{% block title %}{{ config.name or "Portfolio" }}{% endblock %}</title>
     {% set meta_description = (page.meta.description if page is defined and page.meta.description else config.description) or "Portfolio website" %}
     {% set page_path = ("/" if page is defined and page.slug == "index" else ("/" ~ page.slug ~ ".html" if page is defined else "/")) %}
@@ -72,13 +74,13 @@
     </nav>
 
     <main class="main">
-        <div class="container">
+        <div class="container{% block container_class %}{% endblock %}">
             {% block content %}{% endblock %}
         </div>
     </main>
 
     <footer class="footer">
-        <div class="container">
+        <div class="container container-wide">
             <div class="footer-grid">
                 <div class="footer-brand">
                     <a href="/" class="footer-name">{{ config.name or "Serge Koudoro" }}</a>
