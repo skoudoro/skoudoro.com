@@ -17,7 +17,7 @@ Tell me briefly about your data, your current bottleneck and your timeline. I re
 
 ## For researchers & open source
 
-I'm always interested in discussing open-source software development, neuroimaging research, and collaborative opportunities. Feel free to reach out if you're interested in contributing to DIPY, FURY, or other neuroimaging tools, or if you'd like to discuss potential collaborations in research software engineering. [Schedule a meeting with me here.](https://zcal.co/skoudoro)
+I'm always interested in discussing open-source software development, neuroimaging research, and collaborative opportunities. Feel free to reach out if you're interested in contributing to DIPY, FURY, or other neuroimaging tools, or if you'd like to discuss potential collaborations in research software engineering. [Schedule a meeting with me here.](https://zcal.co/skoudoro) You can also support my open-source work through [GitHub Sponsors](https://github.com/sponsors/skoudoro).
 
 Available for:
 

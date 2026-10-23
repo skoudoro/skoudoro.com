@@ -6,6 +6,8 @@ description: "Open-source projects, industry experience, grants, patents and tal
 
 ## 🚀 Open Source Projects
 
+If your work depends on these projects, you can support their maintenance through [GitHub Sponsors](https://github.com/sponsors/skoudoro).
+
 ### 🧠 DIPY - Diffusion Imaging in Python
 
 *Release Manager & Lead Maintainer (2017 - Present)*

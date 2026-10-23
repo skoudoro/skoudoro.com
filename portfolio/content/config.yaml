@@ -5,6 +5,7 @@ tagline: "Open-source tools for neuroimaging & 3D, and expert help for the teams
 description: "Serge Koudoro — Research Software Engineer and consultant: medical imaging, 3D, performance optimization and open-source scientific Python (DIPY, FURY, polyxios)."
 site_url: "https://sergekoudoro.com"
 booking_url: "https://zcal.co/skoudoro"
+sponsor_url: "https://github.com/sponsors/skoudoro"
 # TODO: replace with your public contact email
 contact_email: "CONTACT_EMAIL"
 year: "2026"
