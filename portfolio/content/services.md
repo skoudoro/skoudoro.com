@@ -32,7 +32,7 @@ I help companies and labs build, speed up and maintain the scientific software t
 
 - NIfTI, DICOM, GIFTI, tractography and 3D mesh formats
 - Readers and writers for proprietary or vendor formats
-- Migration from meshio to [polyxios](https://polyxios.org), validated on your files
+- Mesh I/O with [polyxios](https://polyxios.org), validated on your files
 
 ### Maintenance & support contracts
 

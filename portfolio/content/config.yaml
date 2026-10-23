@@ -78,7 +78,7 @@ services:
   - title: "Performance optimization"
     description: "Profiling and speeding up slow scientific code with Cython, SIMD and GPU, with benchmarks before and after."
   - title: "File formats & data conversion"
-    description: "NIfTI, DICOM, mesh and proprietary formats, plus migration from meshio to polyxios."
+    description: "NIfTI, DICOM, mesh and proprietary formats, with mesh I/O built on polyxios."
   - title: "Maintenance & support contracts"
     description: "Priority fixes, code review and long-term support for the internal tools your team relies on."
 
@@ -125,7 +125,7 @@ featured_work:
     image_alt: "FURY scientific visualization engine banner"
 
   - title: "Polyxios"
-    description: "Fast, clean mesh I/O for Python and the maintained successor to meshio - Read and write 3D mesh files across 27 formats with a single dependency"
+    description: "Fast, clean mesh I/O for Python - Read and write 3D mesh files across 27 formats with a single dependency"
     link: "https://polyxios.org"
     image: "/static/img/polyxios.jpg"
     image_alt: "Triangulated 3D mesh"
