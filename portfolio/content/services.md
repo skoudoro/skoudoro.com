@@ -60,7 +60,7 @@ I help companies and labs build, speed up and maintain the scientific software t
 - Lead maintainer and release manager of [DIPY](https://dipy.org), release manager of [FURY](https://fury.gl), creator of [polyxios](https://polyxios.org)
 - Patent holder in multiphoton imaging (FR2982369 / WO2013068943)
 - Grantee of the Chan Zuckerberg Initiative EOSS program and the GitHub Secure Open Source Fund
-- Google Developer Expert, speaker at ISMRM and OHBM
+- Speaker at ISMRM and OHBM
 
 <!--
 TODO: add 2–3 anonymized case studies once you have permission. Template:

@@ -52,7 +52,6 @@ My work includes optimizing and integrating algorithms, managing contributions, 
 - **27 students** mentored through Google Summer of Code (2018-2026)
 - **Patent holder** in multiphoton imaging technology
 - **International speaker** at conferences including ISMRM and OHBM
-- **Google Developer Expert**
 
 ## Beyond Work
 
