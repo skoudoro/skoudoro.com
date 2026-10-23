@@ -8,18 +8,26 @@ booking_url: "https://zcal.co/skoudoro"
 sponsor_url: "https://github.com/sponsors/skoudoro"
 contact_email: "skoudoro@futzs.com"
 year: "2026"
+# Toggle the footer availability line off when fully booked
+available: true
+availability_text: "Available for consulting"
 footer_pitch: "Scientific software, medical imaging & 3D. Open source by default."
 
 social:
   - label: "GitHub"
+    icon: "github"
     url: "https://github.com/skoudoro"
   - label: "LinkedIn"
+    icon: "linkedin"
     url: "https://www.linkedin.com/in/serge-koudoro-b49489ba"
   - label: "X"
+    icon: "x"
     url: "https://x.com/skoudoro"
   - label: "ORCID"
+    icon: "orcid"
     url: "https://orcid.org/0000-0002-9819-9884"
   - label: "Google Scholar"
+    icon: "scholar"
     url: "https://scholar.google.com/citations?hl=fr&user=4xF4xmUAAAAJ"
 
 skills:

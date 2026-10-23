@@ -1,3 +1,4 @@
+{% from "_icons.html" import icon %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -82,10 +83,10 @@
                 <div class="footer-brand">
                     <a href="/" class="footer-name">{{ config.name or "Serge Koudoro" }}</a>
                     <p class="footer-pitch">{{ config.footer_pitch or config.title }}</p>
-                    <p class="footer-status"><span class="footer-dot" aria-hidden="true"></span>Available for consulting</p>
+                    {% if config.available %}<p class="footer-status"><span class="footer-dot" aria-hidden="true"></span>{{ config.availability_text or "Available for consulting" }}</p>{% endif %}
                     <div class="footer-cta">
-                        {% if config.booking_url %}<a href="{{ config.booking_url }}" class="footer-link" target="_blank" rel="noopener">Book a call →</a>{% endif %}
-                        {% if config.contact_email %}<a href="mailto:{{ config.contact_email }}" class="footer-link">{{ config.contact_email }}</a>{% endif %}
+                        {% if config.booking_url %}<a href="{{ config.booking_url }}" class="footer-link" target="_blank" rel="noopener">{{ icon("calendar") }}Book a call →</a>{% endif %}
+                        {% if config.contact_email %}<a href="mailto:{{ config.contact_email }}" class="footer-link">{{ icon("mail") }}{{ config.contact_email }}</a>{% endif %}
                     </div>
                 </div>
                 <nav class="footer-col" aria-label="Footer">
@@ -102,9 +103,9 @@
                     <h2 class="footer-heading">Elsewhere</h2>
                     <ul>
                         {% for link in config.social or [] %}
-                        <li><a href="{{ link.url }}" class="footer-link" target="_blank" rel="noopener me">{{ link.label }}</a></li>
+                        <li><a href="{{ link.url }}" class="footer-link" target="_blank" rel="noopener me">{% if link.icon %}{{ icon(link.icon) }}{% endif %}{{ link.label }}</a></li>
                         {% endfor %}
-                        {% if config.sponsor_url %}<li><a href="{{ config.sponsor_url }}" class="footer-link footer-sponsor" target="_blank" rel="noopener">♥ Sponsor</a></li>{% endif %}
+                        {% if config.sponsor_url %}<li><a href="{{ config.sponsor_url }}" class="footer-link footer-sponsor" target="_blank" rel="noopener">{{ icon("heart") }}Sponsor</a></li>{% endif %}
                     </ul>
                 </div>
             </div>

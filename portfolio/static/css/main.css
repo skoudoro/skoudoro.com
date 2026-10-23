@@ -89,6 +89,7 @@ body {
 
 .nav-links {
     display: flex;
+    flex-wrap: wrap;
     list-style: none;
     gap: var(--space-lg);
 }
@@ -603,6 +604,21 @@ body {
     border-top: 1px solid var(--color-border);
 }
 
+.footer .footer-link {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--space-sm);
+}
+
+.footer .icon {
+    flex-shrink: 0;
+    opacity: 0.75;
+}
+
+.footer .footer-link:hover .icon {
+    opacity: 1;
+}
+
 .footer-link.footer-sponsor:hover {
     color: #bf3989;
 }
@@ -760,7 +776,8 @@ body {
     }
 
     .nav-links {
-        gap: var(--space-md);
+        justify-content: center;
+        gap: var(--space-xs) var(--space-md);
     }
 
     .hero-name {
